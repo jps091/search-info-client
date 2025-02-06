@@ -1,0 +1,46 @@
+/* 헤더 전체 배경은 App.vue나 전역 스타일에서 관리할 수 있지만, 여기서는 헤더 관련 스타일만 작성합니다. */
+
+/* 헤더 스타일 */
+.app-bar {
+  background-color: #e6f7ff;
+  border-bottom: 1px solid #c0d8e8;
+  padding: 10px 0;
+}
+
+/* 제목 스타일: 1.5rem, 파란색 (#007bff) */
+.title-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: none;
+  color: #007bff;
+}
+
+/* 부제목 스타일: 0.75rem, 검정색 */
+.subtitle-text {
+  font-size: 0.75rem;
+  text-transform: none;
+  color: #000;
+}
+
+/* 채팅방 버튼 스타일 – 버튼다운 느낌을 주되, 
+   배경은 연한 회색, 글자 크기는 유지하고 버튼 자체의 크기를 줄임 */
+.chat-room-btn {
+  background-color: #e5ecef;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  /* 텍스트 크기는 그대로 유지하고 padding을 줄여서 전체 크기를 축소 */
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  text-transform: none;
+  /* 제목보다 약간 안쪽으로 들여쓰기 */
+  margin-left: 16px;
+  margin-top: 4px;
+  position: relative;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.chat-room-btn:hover {
+  background-color: #aadeef;
+}

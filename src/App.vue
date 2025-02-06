@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <HeaderComponent />
+    <SearchComponent />
     <v-main>
       <router-view />
     </v-main>
@@ -8,11 +9,14 @@
 </template>
 
 <script>
-import HeaderComponent from './components/HeaderComnponent.vue';
+import HeaderComponent from './components/HeaderComponent.vue';
+import SearchComponent from './components/SearchComponent.vue';
+
 export default {
   name: 'App',
   components: {
     HeaderComponent,
+    SearchComponent,
   },
 };
 </script>

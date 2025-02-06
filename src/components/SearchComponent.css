@@ -1,0 +1,76 @@
+/* 본문 컨테이너: 헤더와 자연스럽게 연결 (v-main 자동 공간 할당) */
+.main-container {
+  padding: 20px;
+  background-color: #e6f7ff;
+}
+
+/* 카드 스타일: 검색/상위 키워드 영역에 적용 */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* 검색 섹션 스타일 */
+.search-section {
+  padding-right: 20px;
+}
+.search-input {
+  margin-bottom: 15px;
+}
+
+/* 검색 결과 스타일 */
+.search-result {
+  margin-top: 20px;
+}
+.search-result h3 {
+  margin-bottom: 10px;
+}
+.search-result a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+.search-result a:hover {
+  text-decoration: underline;
+}
+.search-result p {
+  margin: 5px 0 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* 상위 키워드 섹션 스타일 */
+.ranking-section {
+  padding-left: 20px;
+}
+.ranking-section ul {
+  list-style: none;
+  padding: 0;
+}
+.ranking-section li {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+.ranking-section .count {
+  font-size: 0.9em;
+  color: #888;
+  margin-left: 5px;
+}
+
+/* 섹션 제목 공통 스타일 */
+.section-title {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 추가: 상위 키워드 영역의 제목 스타일 */
+.ranking-title {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #007bff;
+  font-weight: bold;
+}

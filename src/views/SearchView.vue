@@ -30,8 +30,8 @@
 </template>
 
 <script>
-const BASE_URL = 'http://localhost:8080';
-//const BASE_URL = '';
+//const BASE_URL = 'http://localhost:8080';
+const BASE_URL = '';
 
 export default {
   name: 'SearchView',
@@ -42,7 +42,6 @@ export default {
     };
   },
   methods: {
-    // HTML 태그 제거 헬퍼 함수
     stripHTMLTags(text) {
       const div = document.createElement('div');
       div.innerHTML = text;
@@ -90,6 +89,22 @@ export default {
         });
     },
   },
+  created() {
+    // 만약 라우터 쿼리 파라미터에 검색어가 있다면 자동으로 검색 실행
+    if (this.$route.query.query) {
+      this.searchQuery = this.$route.query.query;
+      this.search();
+    }
+  },
+  watch: {
+    // 라우터 쿼리 파라미터가 변경될 때마다 검색 실행
+    '$route.query.query'(newQuery) {
+      if (newQuery) {
+        this.searchQuery = newQuery;
+        this.search();
+      }
+    },
+  },
 };
 </script>
 
@@ -100,36 +115,29 @@ export default {
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-
 .section-title {
   margin-bottom: 15px;
   font-size: 1.3rem;
   font-weight: bold;
   color: #333;
 }
-
 .search-input {
   margin-bottom: 15px;
 }
-
 .search-result {
   margin-top: 20px;
 }
-
 .search-result h3 {
   margin-bottom: 10px;
 }
-
 .search-result a {
   color: #007bff;
   text-decoration: none;
   font-size: 1.1em;
 }
-
 .search-result a:hover {
   text-decoration: underline;
 }
-
 .search-result p {
   margin: 5px 0 0;
   font-size: 0.9em;

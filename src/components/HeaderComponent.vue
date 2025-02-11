@@ -11,7 +11,7 @@
             :to="{ path: '/groupchatting/list' }"
             class="subtitle-text chat-room-btn"
           >
-            오늘의 상위 키워드 채팅방 목록
+            지난 상위 검색어(구현중)
           </v-btn>
         </v-col>
       </v-row>
@@ -62,7 +62,7 @@ export default {
   overflow: visible;
   text-align: left;
   padding: 0;
-  margin: 0;
+  margin-top: 7px;
   background-color: none !important;
   box-shadow: none !important;
   border: none !important;

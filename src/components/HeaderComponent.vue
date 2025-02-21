@@ -8,10 +8,10 @@
           </v-btn>
           <v-btn
             outlined
-            :to="{ path: '/groupchatting/list' }"
+            :to="{ path: '/chat-rooms' }"
             class="subtitle-text chat-room-btn"
           >
-            지난 상위 검색어(구현중)
+            상위 키워드 단체 채팅방 목록
           </v-btn>
         </v-col>
       </v-row>
@@ -28,8 +28,8 @@ export default {
 <style scoped>
 /* 앱바 전체 스타일: 충분한 패딩과 최소 높이 설정 */
 .app-bar {
-  background-color: #e6f7ff;
-  border-bottom: 1px solid #c0d8e8;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ffffff;
   padding: 20px 24px; /* 위, 아래 여백을 충분히 줌 */
   min-height: 100px;
   box-sizing: border-box;
@@ -56,6 +56,7 @@ export default {
 .title-text {
   font-size: 1.5rem;
   font-weight: bold;
+  background-color: #ffffff;
   color: #007bff;
   text-transform: none;
   white-space: nowrap;
@@ -63,7 +64,6 @@ export default {
   text-align: left;
   padding: 0;
   margin-top: 7px;
-  background-color: none !important;
   box-shadow: none !important;
   border: none !important;
   outline: none !important;
@@ -73,6 +73,8 @@ export default {
 .subtitle-text {
   font-size: 0.75rem;
   color: #000;
+  background-color: #ffffff;
+  border: 3px solid #ddd;
   text-transform: none;
   margin-top: 8px;
   white-space: nowrap;
@@ -82,8 +84,7 @@ export default {
 
 /* 채팅방 버튼 스타일 */
 .chat-room-btn {
-  background-color: #e5ecef;
-  color: #333;
+  background-color: #ffffff;
   border: none;
   border-radius: 4px;
   padding: 2px 6px;
@@ -93,10 +94,5 @@ export default {
   margin-top: 8px;
   position: relative;
   z-index: 10;
-  transition: background-color 0.3s ease;
-}
-
-.chat-room-btn:hover {
-  background-color: #aadeef;
 }
 </style>

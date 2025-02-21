@@ -1,5 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import SearchView from '@/views/SearchView.vue';
+import ChatRoomList from '@/views/ChatRoomList.vue';
+import ChatPage from '@/views/ChatPage.vue';
 
 const routes = [
   {
@@ -7,7 +9,16 @@ const routes = [
     name: 'Search',
     component: SearchView,
   },
-  // 추후 다른 기능 화면이 추가될 경우 여기에 경로를 추가
+  {
+    path: '/chat-rooms',
+    name: 'ChatRooms',
+    component: ChatRoomList,
+  },
+  {
+    path: '/chatpage/:roomKeyword',
+    name: 'ChatPage',
+    component: ChatPage,
+  },
 ];
 
 const router = createRouter({

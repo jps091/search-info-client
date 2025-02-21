@@ -7,7 +7,7 @@
     <v-main>
       <v-container fluid>
         <v-row>
-          <!-- 좌측: 라우터 뷰 (예, SearchView) -->
+          <!-- 좌측: 라우터 뷰 (예: SearchView) -->
           <v-col cols="12" md="8">
             <router-view />
           </v-col>
@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import HeaderComponent from './components/HeaderComponent.vue';
 import RankingComponent from './components/RankingComponent.vue';
 
@@ -33,6 +34,46 @@ export default {
   components: {
     HeaderComponent,
     RankingComponent,
+  },
+  created() {
+    this.initializeGuestToken();
+  },
+  methods: {
+    initializeGuestToken() {
+      // localStorage에 저장된 토큰 객체를 확인합니다.
+      const storedTokenData = localStorage.getItem('guestToken');
+      if (storedTokenData) {
+        const tokenObj = JSON.parse(storedTokenData);
+        // 현재 시간과 만료 시간을 비교합니다.
+        if (Date.now() > tokenObj.expires) {
+          console.log('토큰 만료됨, 재발급 요청합니다.');
+          localStorage.removeItem('guestToken');
+          this.fetchGuestToken();
+        } else {
+          console.log('유효한 토큰이 이미 존재합니다:', tokenObj.token);
+        }
+      } else {
+        this.fetchGuestToken();
+      }
+    },
+    fetchGuestToken() {
+      axios
+        .post(`${process.env.VUE_APP_BASE_URL}/api/v1/chat-rooms/token`, {})
+        .then((response) => {
+          // 서버 응답이 { token: "발급된UUID" } 형태라고 가정합니다.
+          const token = response.data.token;
+          // 만료시간을 1시간(3600000ms)으로 설정
+          const expires = Date.now() + 3600000;
+          localStorage.setItem(
+            'guestToken',
+            JSON.stringify({ token, expires }),
+          );
+          console.log('Guest token 저장 완료:', token);
+        })
+        .catch((error) => {
+          console.error('Guest token 발급 실패:', error);
+        });
+    },
   },
 };
 </script>

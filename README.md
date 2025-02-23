@@ -1,16 +1,18 @@
-##  📑 Web Search with Naver Open API - 웹 검색 서비스(Client with Vue.js)
+##  📑 Search-Info with OpenAPI, Stomp - 웹 검색, 채팅 제공 서비스(Frontend)
 
-해당 [백엔드 서버](https://github.com/jps091/web-search-server)의 클라이언트 서버 입니다. Nginx를 통해 배포를 진행하였습니다.
+해당 [백엔드 서버](https://github.com/jps091/web-search-server)의 클라이언트 서버 입니다.
+Vue.js, Nginx를 통해 개발 및 배포를 진행하였습니다.
 
 ---
 
 ### 🗂 프로젝트 구조
 
 ```markdown
+src
 ├── components # 공통 기능
 │   └── HeaderComponent.vue # 페이지 헤더 
 │   └── RankingComponent.vue # 상위 검색어
-└── vue # 개별 기능 모듈
+└── views # 개별 기능 모듈
 │   └── SearchView.vue # 검색 결과 화면
 │   └── ChatRoomList.vue # 채팅방 리스트 화면
 │   └── ChatPage.vue # 채팅방 입장 화면
@@ -19,7 +21,6 @@
 ---
 
 ### 🚴 기능 구현 화면
-
 
 - **home**
 <img width="600" height="500" alt="image" src="https://github.com/user-attachments/assets/80754b88-7442-44ba-9fa6-64ad6dcce5c5" />
@@ -30,8 +31,8 @@
 - **채팅방 목록**
 <img width="600" height="500" alt="image" src="https://github.com/user-attachments/assets/a20d0cb6-c4d3-4e20-82e4-ef1ca269f817" />
 
-- **채팅방 입장**
-<img width="600" height="500" alt="image" src="https://github.com/user-attachments/assets/1de14851-e776-411d-a85d-c009ade57866" />
+- **채팅방 상세**
+<img width="600" height="500" alt="image" src="https://github.com/user-attachments/assets/faa58a80-f1f7-47f9-9dfa-b27aa3771e8f" />
 
 ---
 

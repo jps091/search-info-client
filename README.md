@@ -20,8 +20,17 @@
 
 ### 🚴 기능 구현 화면
 
-<img width="600" height="500" alt="image" src="https://github.com/user-attachments/assets/60cec586-2d8a-4402-bf09-d440248b1866" />
+
+- **home**
+<img width="600" height="500" alt="image" src="https://github.com/user-attachments/assets/80754b88-7442-44ba-9fa6-64ad6dcce5c5" />
+
+- **검색 결과**
+<img width="600" height="500" alt="image" src="https://github.com/user-attachments/assets/b711cc07-331b-4365-b686-f8cd2af462a9" />
+
+- **채팅방 목록**
 <img width="600" height="500" alt="image" src="https://github.com/user-attachments/assets/a20d0cb6-c4d3-4e20-82e4-ef1ca269f817" />
+
+- **채팅방 입장**
 <img width="600" height="500" alt="image" src="https://github.com/user-attachments/assets/1de14851-e776-411d-a85d-c009ade57866" />
 
 ---

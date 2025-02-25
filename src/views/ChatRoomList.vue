@@ -11,7 +11,7 @@
                   <th>채팅 키워드</th>
                   <th>현재 참여 인원</th>
                   <th>최대 참여 인원</th>
-                  <th>액션</th>
+                  <th>참여</th>
                 </tr>
               </thead>
               <tbody>

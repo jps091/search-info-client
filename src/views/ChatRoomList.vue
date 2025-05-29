@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container fluid style="margin-top: 32px">
     <v-row>
       <v-col>
         <v-card>

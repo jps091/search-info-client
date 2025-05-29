@@ -1,5 +1,6 @@
 <template>
-  <v-container>
+  <v-container style="margin-top: 32px">
+    <!-- 👈 추가된 부분 -->
     <v-row>
       <v-col>
         <div class="card">

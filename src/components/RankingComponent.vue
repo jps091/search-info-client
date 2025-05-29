@@ -1,10 +1,9 @@
 <template>
-  <v-container>
+  <v-container class="ranking-container" style="margin-top: 32px">
     <v-row>
       <v-col>
         <div class="card">
           <h2 class="section-title ranking-title">TODAY HOT 검색어</h2>
-          <!-- 부제목: 제목과 좌측 정렬 -->
           <p class="subtitle">키워드 클릭시 검색 바로가기</p>
           <ul>
             <li

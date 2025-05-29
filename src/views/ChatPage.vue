@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container fluid style="margin-top: 32px">
     <v-row class="content-row" align="start">
       <!-- 왼쪽: 참여자 목록 및 채팅방 제목 -->
       <v-col cols="12" md="3">

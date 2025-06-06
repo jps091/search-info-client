@@ -20,12 +20,15 @@
         <div class="summary-title">오늘의 IT 뉴스</div>
         <v-row dense>
           <v-col
-            v-for="(line, idx) in summaries"
+            v-for="(item, idx) in summaries"
             :key="idx"
             cols="12"
             class="summary-line"
           >
-            • {{ line }}
+            •
+            <a :href="item.link" target="_blank" rel="noopener noreferrer">
+              {{ item.summary }} (상세보기)
+            </a>
           </v-col>
         </v-row>
       </v-container>
@@ -35,18 +38,19 @@
 
 <script>
 const BASE_URL = process.env.VUE_APP_BASE_URL;
+
 export default {
   name: 'HeaderComponent',
   data() {
     return {
-      summaries: [],
+      summaries: [], // [{ summary: string, link: string }]
     };
   },
   created() {
     fetch(`${BASE_URL}/api/v1/webs/summary`)
       .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
       .then((json) => {
-        this.summaries = Array.isArray(json) ? json : [];
+        this.summaries = Array.isArray(json?.results) ? json.results : [];
       })
       .catch(() => {
         this.summaries = [];
@@ -90,5 +94,12 @@ export default {
   color: #424242;
   line-height: 1.6;
   margin-bottom: 4px;
+}
+.summary-line a {
+  color: inherit;
+  text-decoration: none;
+}
+.summary-line a:hover {
+  text-decoration: underline;
 }
 </style>
